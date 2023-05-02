@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
    int leftdiceroll =1;
    int rightdiceroll =1;
 
-   void Dice(){
+   void dice(){
      setState(() {
        leftdiceroll =Random().nextInt(6)+1;
        rightdiceroll= Random().nextInt(6)+1;
@@ -27,11 +27,11 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 43, 70, 40),
       appBar: AppBar(
-        title: const Text("Dice Game"),
+        title: const Text("Dice Game", style: TextStyle(fontFamily: "Lobster"),),
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 114, 15, 15),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -57,9 +57,9 @@ class _HomeState extends State<Home> {
                 style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 114, 15, 15), foregroundColor: Colors.yellow, fixedSize: const Size(140, 40)),
                 onPressed: (){
-                  Dice();
+                  dice();
                 },
-                child: const Text("Roll",))
+                child: const Text("Roll"))
               
             ],
           ),
